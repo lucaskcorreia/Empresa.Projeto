@@ -1,0 +1,5 @@
+﻿$(function () {
+    inicializeValidation();
+    //inicializeNextPrevFocus();
+    inicializeMasking();
+});

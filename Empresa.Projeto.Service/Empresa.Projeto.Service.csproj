@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Business\Interface\" />
+    <Folder Include="Business\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Empresa.Projeto.Domain\Empresa.Projeto.Domain.csproj" />
+    <ProjectReference Include="..\Empresa.Projeto.Infra.Data\Empresa.Projeto.Infra.Data.csproj" />
+    <ProjectReference Include="..\Empresa.Projeto.Infra.Utilities\Empresa.Projeto.Infra.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

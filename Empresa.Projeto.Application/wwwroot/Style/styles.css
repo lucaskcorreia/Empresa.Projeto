@@ -1,0 +1,734 @@
+﻿:root {
+    --font-weight: bold; /* espessura de fontes do sistema */
+    --blue: hsl(211, 100%, 50%);
+    --smalt: hsl(210, 100%, 60%);
+    --gainsboro: hsl(0, 0%, 90%);
+    --negative: hsl(0, 100%, 50%);
+    --positive: hsl(120, 61%, 34%);
+    --black-opacity4: hsla(0, 0%, 0%, 0.4);
+    --black-opacity6: rgba(0, 0, 0, 0.6);
+    --white-opacity8: hsla(0, 0%, 100%, 0.8);
+    --shadow-color: var(--black-opacity4);
+    --font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --dashed-border-one: 1px dashed var(--footer); /* borda superior do footer principal */
+    --dashed-border-two: 1px dashed var(--footer-secundary); /* borda superior do footer secundario usado em telas fullscreen/venda/cards/modais */
+    --empresa-shadow: drop-shadow(-10px 10px 4px var(--shadow-color)); /* sombreado nos botoes principais da home page e logo da empresa na venda */
+    /*cores default da empresa*/
+    --empresa-grey: hsl(32, 9%, 43%);
+    --empresa-red: hsl(12, 86%, 54%);
+    --empresa-blue: hsl(197, 100%, 44%);
+    --empresa-green: hsl(65, 100%, 42%);
+    --empresa-purple: hsl(289, 60%, 32%);    
+    /*temas*/
+    --thema-default: var(--empresa-blue);
+    --thema-nissei: hsl(49, 100%, 51%);
+    --thema-redone: indianred;
+    --thema-descontao: #FF00BC;
+}
+
+/*#region TAGS*/
+body {
+    height: 100%;
+    font-size: 14px;
+    line-height: 1em;
+    background: var(--bg-primary);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: var(--home-box-shadow);
+    font-family: var(--font-family);
+}
+
+footer {
+    bottom: 0;
+    width: 90%;
+    height: 50px;
+    display: flex;
+    padding: 0 30px;
+    position: fixed;
+    margin-left: 5%;
+    margin-right: 5%;
+    line-height: 50px;
+    background: transparent;
+    color: var(--footer);
+    border-top: var(--dashed-border-one);
+}
+
+form {
+    margin-bottom: 12px;
+    font-weight: var(--font-weight);
+    color: var(--empresa-secundary);
+}
+
+small {
+    font-size: 90%;
+}
+/*#endregion*/
+
+/*#region CREATED CLASS*/
+.text-primary {
+    color: var(--empresa-secundary);
+}
+
+.font-weight {
+    font-weight: var(--font-weight);
+}
+
+.positive {
+    color: forestgreen !important;
+}
+
+.empresa-purple {
+    color: var(--empresa-purple) !important;
+}
+
+.empresa-tertiary {
+    color: var(--empresa-tertiary) !important;
+}
+
+.empresa-danger {
+    color: var(--empresa-danger) !important;
+}
+
+.blur-5 {
+    filter: blur(5px);
+}
+
+.invisible-div {
+    margin-bottom: 8px;
+    color: transparent;
+}
+
+.centralize-label-inline {
+    display: block;
+    padding: .375rem .75rem;
+    line-height: 1.5rem;
+}
+
+.svg-hide {
+    width: 0;
+    height: 0;
+    position: absolute;
+    margin-left: -100%;
+}
+
+.div-hide {
+    display: none !important;
+}
+
+.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.display-block {
+    display: block;
+}
+
+.not-active {
+    pointer-events: none;
+    cursor: default;
+}
+
+a.disabled {
+    pointer-events: none !important;
+    cursor: default !important;
+    color: var(--disabled-anchor) !important;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.font-bold {
+    font-weight: bold
+}
+
+.line-height-90-p {
+    line-height: 90%;
+}
+
+.width-1 {
+	width: 1%;
+}
+
+.width-2 {
+	width: 2%;
+}
+
+.width-3 {
+	width: 3%;
+}
+
+.width-4 {
+	width: 4%;
+}
+
+.width-5 {
+    width: 5%;
+}
+
+.width-6 {
+    width: 6%;
+}
+
+.width-7 {
+    width: 7%;
+}
+
+.width-8 {
+    width: 8%;
+}
+
+.width-9 {
+    width: 9%;
+}
+
+.width-10 {
+    width: 10%;
+}
+
+.width-11 {
+    width: 11%;
+}
+
+.width-12 {
+    width: 12%;
+}
+
+.width-13 {
+    width: 13%;
+}
+
+.width-14 {
+    width: 14%;
+}
+
+.width-15 {
+    width: 15%;
+}
+
+.width-20 {
+    width: 20%;
+}
+
+.width-22 {
+    width: 22%;
+}
+
+.width-23 {
+    width: 23%;
+}
+
+.width-25 {
+    width: 25%;
+}
+
+.width-30 {
+    width: 30%;
+}
+
+.width-40 {
+    width: 40%;
+}
+
+.width-42 {
+    width: 42%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.width-60 {
+    width: 60%;
+}
+
+.width-92 {
+    width: 92%;
+}
+
+.width-96 {
+    width: 96%;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+.center-margin {
+    margin: 0 auto;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-left {
+    justify-content: flex-start;
+}
+
+.justify-right {
+    justify-content: flex-end;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.center-align-webkit {
+    text-align: -webkit-center;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.left-align-webkit {
+    text-align: -webkit-left;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.right-align-webkit {
+    text-align: -webkit-right;
+}
+
+.padding-0 {
+    padding: 0 !important;
+}
+
+.padding-sides-10 {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.padding-sides-15 {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.padding-bottom-15 {
+    padding-bottom: 15px;
+}
+
+.padding-right-0 {
+    padding-right: 0 !important;
+}
+
+.padding-left-0 {
+    padding-left: 0 !important;
+}
+
+.padding-left-60 {
+    padding-left: 60px;
+}
+
+.margin-top-0 {
+    margin-top: 0;
+}
+
+.margin-top-5 {
+    margin-top: 5px;
+}
+
+.margin-top-10 {
+    margin-top: 10px !important;
+}
+
+.margin-top-15 {
+    margin-top: 15px;
+}
+
+.margin-top-21 {
+    margin-top: 21px;
+}
+
+.margin-top-60 {
+    margin-top: 60px;
+}
+
+.margin-bottom-15 {
+    margin-bottom: 15px;
+}
+
+.margin-right-3 {
+    margin-right: 3px;
+}
+
+.margin-right-10 {
+    margin-right: 10px;
+}
+
+.margin-left-15 {
+    margin-left: 15px;
+}
+
+.margin-left-100 {
+    margin-left: 100px;
+}
+
+.margin-top-5-p {
+    margin-top: 5%;
+}
+
+.margin-left-20-p {
+    margin-left: 20%;
+}
+
+.font-red-bold {
+    color: var(--empresa-danger);
+    font-weight: bold;
+}
+
+.font-invisible {
+    color: transparent;
+}
+
+.text-area-swal {
+    width: auto !important;
+    overflow: auto !important;
+}
+/*#endregion*/
+
+/*#region CLIENTE IDENTIFICADO */
+.aposentado {
+    color: var(--aposentado);
+}
+
+.mulher {
+    color: var(--mulher);
+}
+
+.identificado {
+    color: var(--identificado);
+}
+
+.medico {
+    color: var(--medico);
+}
+
+.conveniado {
+    color: var(--conveniado);
+}
+
+.inativo {
+    color: var(--inativo);
+}
+
+.bloqueado {
+    color: var(--bloqueado);
+}
+
+.cpf-nota {
+    color: var(--cpf-nota);
+}
+
+.empresa-parceira {
+    color: sienna;
+}
+
+.aposentado,
+.mulher,
+.identificado,
+.medico,
+.conveniado,
+.inativo,
+.bloqueado,
+.cpf-nota,
+.empresa-parceira {
+    outline: none;
+}
+
+    .aposentado.white,
+    .mulher.white,
+    .identificado.white,
+    .medico.white,
+    .conveniado.white {
+        color: white !important;
+    }
+/*#endregion */
+
+/*#region EDITED CLASS GENERIC*/
+.bg-primary {
+    background: var(--bg-secundary) !important;
+}
+
+.modal-backdrop {
+    background-color: rgba(0,0,0,0.6);
+}
+
+.input-group-addon,
+.custom-select {
+    height: auto !important;
+}
+
+.input-group-addon {
+    padding: .3rem .75rem;
+}
+
+.form-control {
+    border: none !important;
+}
+
+.content {
+    padding-top: 50px;
+}
+
+.form-text {
+    margin-top: .45rem;
+}
+/*#endregion*/
+
+/*#region FOCO */
+.form-control:focus,
+.switch-input:focus ~ .slider {
+    box-shadow: var(--form-focus);
+    border: none;
+}
+
+    .form-control:focus.has-red {
+        box-shadow: inset 0 0 3px red, 0 0 10px .2em red;
+    }
+
+.form-control:disabled,
+.form-control[readonly],
+.sifrao {
+    color: var(--empresa-secundary);
+    background-color: var(--disabled-color);
+    border: none;
+}
+
+    .form-control:disabled:focus,
+    .form-control[readonly]:focus,
+    .switch input:focus {
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+/*#endregion*/
+
+/*#region CARDS/MODAIS */
+/*#region CONTEUDO */
+.title-icon {
+    height: 1em;
+    font-size: 35px;
+    display: inline-block;
+    vertical-align: -.125em;
+}
+
+.close {
+    color: var(--empresa-secundary);
+    opacity: 1;
+    font-size: 35px;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+}
+
+    .close:hover,
+    .close:active,
+    .close:focus {
+        color: var(--empresa-danger);
+        outline: none;
+        opacity: 1;
+    }
+/*#endregion*/
+
+/*#region CORPO */
+.content > .card {
+    box-shadow: var(--card-border) !important;
+}
+
+.card {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.modal-70 {
+    max-width: 70% !important;
+}
+
+.modal-90 {
+    max-width: 90% !important;
+}
+
+.modal-content {
+    color: var(--empresa-secundary);
+    font-weight: var(--font-weight);
+}
+
+.card,
+.modal-content {
+    border: none;
+    border-radius: 8px;
+    background: var(--bg-secundary);
+}
+
+.card-header,
+.card-body,
+.card-footer,
+.modal-header,
+.modal-body,
+.modal-footer {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.card-header,
+.modal-header {
+    border-bottom: var(--dashed-border-two);
+}
+
+.card-body,
+.modal-body {
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 0;
+}
+
+.card-footer,
+.modal-footer {
+    border-top: var(--dashed-border-two);
+}
+
+.card-header {
+    padding-bottom: 0;
+}
+
+.card-footer {
+    padding-bottom: 0;
+}
+/*#endregion*/
+/*#endregion*/
+
+/*#region SCROLL BAR */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 0%, 0.3);
+}
+
+::-webkit-scrollbar-corner {
+    opacity: 0;
+}
+/*#endregion*/
+
+/* MEDIA QUERIES */
+@media (min-width: 1919px) and (min-height: 1079px) {
+    .col-md-1, .col-md-2,
+    .col-md-8, .col-md-9,
+    .col-md-10 {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .margin-top-15 {
+        margin-top: 20px;
+    }
+}
+
+@media all and (max-width: 1200px) {
+    small {
+        font-size: 80%;
+    }
+}
+
+@media all and (min-width: 962px) {
+    .modal-lg {
+        max-width: 1000px !important;
+    }
+}
+
+@media all and (max-height: 601px) {
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .close {
+        font-size: 28px;
+    }
+
+    .title-icon {
+        font-size: 28px;
+    }
+
+    .modal-lg {
+        max-width: 90% !important;
+    }
+}
+
+@media (max-width: 962px) and (max-height: 601px) {
+    .col-md-1, .col-md-2, .col-md-3,
+    .col-md-4, .col-md-5, .col-md-6,
+    .col-md-8, .col-md-9, .col-md-10,
+    .col-md-11, .col-md-12 {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .margin-top-15 {
+        margin-top: 10px;
+    }
+}
+
+@media all and (max-width: 962px) {
+    body, .form-control,
+    .input-group-addon,
+    .select-input {
+        font-size: 12px;
+    }
+
+    .custom-input {
+        padding-top: .375rem;
+        padding-bottom: .375rem;
+    }
+
+    btn {
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width: 800px) and (max-height: 600px) {
+    body, .form-control,
+    .input-group-addon,
+    .select-input {
+        font-size: 9px;
+    }
+
+    .card-title {
+        margin-bottom: .55rem;
+    }
+
+    .close {
+        font-size: 25px;
+    }
+
+    .title-icon {
+        font-size: 25px;
+    }
+
+    .modal-title,
+    .card-title {
+        font-size: 1.03rem;
+    }
+
+    .modal-header {
+        padding: 10px 15px;
+    }
+}
