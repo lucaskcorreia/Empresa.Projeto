@@ -2,22 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Empresa.Projeto.Infra.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Empresa.Projeto.Application
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        private IConfiguration Configuration { get; }
+
+        public Startup(IHostingEnvironment env)
         {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("Configuration/Json/appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile("Configuration/Json/database.json", optional: true, reloadOnChange: true);
+
+            Configuration = builder.Build();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            var sqlConnectionString = Configuration.GetConnectionString("SqlServerProvider");
+            //services.AddDbContext<SqlServerContext>(options => options.UseSqlServer(sqlConnectionString));
+            services.AddDbContext<SqlServerContext>(options => 
+                options.UseSqlServer(sqlConnectionString, b => b.MigrationsAssembly("Empresa.Projeto.Infra.Data")));
+        }
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

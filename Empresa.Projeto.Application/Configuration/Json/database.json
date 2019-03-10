@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "SqlServerProvider": "Data Source=.\\SQLEXPRESS; Initial Catalog=Empresa; User Id=Lucas; Password=xpsp2;"
+  }
+}
